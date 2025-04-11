@@ -4,20 +4,20 @@ Este sistema fullStack foi desenvolvido para gerenciamento de estoque, com auten
 Tecnologias utilizadas:
 
 # Back-End
-PHP 8.1 com MySQL
-Laravel
-Composer
+PHP 8.1 com MySQL.
+Laravel.
+Composer.
 
 # Front-End
-Vue.js 3.5
+Vue.js 3.5.
 
 # Demais tecnologias
-Nginx
-Docker
+Nginx.
+Docker.
 
 ## ⚙️ Funcionalidades
-Cadastros, visualização, edição e remoção de Produtos, Categorias e Usuários
-Login e Logout com credenciais
+Cadastros, visualização, edição e remoção de Produtos, Categorias e Usuários;
+Login e Logout com credenciais.
 
 ## Como inicializar o projeto
 Execute o seguinte comando como solicitado no desafio:
