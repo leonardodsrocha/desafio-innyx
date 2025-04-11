@@ -1,0 +1,9 @@
+FROM node:latest
+
+WORKDIR /app
+
+COPY ./innyx_front /app
+
+RUN npm install
+
+CMD ["npm", "run", "serve", "--fix"]

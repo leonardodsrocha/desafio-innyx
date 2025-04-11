@@ -1,0 +1,70 @@
+version: '3'
+services:
+  laravel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-app
+      
+    environment:
+      - APP_NAME=Laravel
+      - APP_ENV=local
+      - APP_KEY=
+      - APP_DEBUG=true
+      - APP_URL=http://laravel-app:8000
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=innyx
+      - DB_USERNAME=root
+      - DB_PASSWORD=root123
+    volumes: 
+      - imagens:/var/www/html/public/imagens
+    depends_on:
+      - mysql
+    networks:
+      - mynetwork
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - laravel-app
+    networks:
+      - mynetwork
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3388:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_DATABASE=innyx
+    networks:
+      - mynetwork
+
+  vue-app:
+    build:
+      context: .
+      dockerfile: Dockerfile_vue-app
+    container_name: vue-app
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+    depends_on:
+      - laravel-app
+
+networks:
+  mynetwork:
+
+volumes:
+  mysql_data:
+  imagens:
