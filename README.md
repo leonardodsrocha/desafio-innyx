@@ -1,24 +1,38 @@
-# innyx
+# Desafio Técnico - Desenvolvedor FullStack
+Este sistema fullStack foi desenvolvido para gerenciamento de estoque, com autenticação segura e uma interface moderna e responsiva. O projeto é dividido entre backend (API REST) e frontend (interface web).
 
-Teste de desenvolvimento em Laravel com Vue
+Tecnologias utilizadas:
 
-Para testar o conteúdo desenvolvido, será necessário o Docker, Docker Compose e Git(ou pode baixar direto)
+# Back-End
+PHP 8.1 com MySQL
+Laravel
+Composer
 
-Usando o git execute o comando git clone https://github.com/jprogramador/innyx
+# Front-End
+Vue.js 3.5
 
-Acesse o diretório principal innyx
+# Demais tecnologias
+Nginx
+Docker
 
-execute docker-compose up -d
+## ⚙️ Funcionalidades
+Cadastros, visualização, edição e remoção de Produtos, Categorias e Usuários
+Login e Logout com credenciais
 
-Ao terminar execute docker exec -it laravel-app php artisan migrate --seed
+## Como inicializar o projeto
+Execute o seguinte comando como solicitado no desafio:
+```bash
+  docker-compose up -d
+```
+
+Em seguida, execute:
+```bash
+  docker exec -it laravel-app php artisan migrate --seed
+```
 O comando acima é utilizado para gerar dados aleatórios no sistema e um usuário inicial
 
-Acesse http://localhost:8080 para utilizar o sistema
+## Acessando via browser
+Acesse: http://localhost:8080 para utilizar o sistema
 Dados de acesso inicial:
 E-Mail: teste@teste.com
 Senha: 123
-
-Para parar a aplicação execute docker-compose down
-
-Para reiniciar execute novamente docker-compose up -d
-Não é necessário executar o migrate novamente, somente na primeira vez
